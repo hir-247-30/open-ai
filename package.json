@@ -1,0 +1,31 @@
+{
+  "name": "chat-gpt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/typescript": "^2.8.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/composition-api": "^0.34.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "core-js": "^3.25.3",
+    "express": "^4.19.2",
+    "nuxt": "^2.15.8",
+    "openai": "^4.54.0",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.10"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.18.1",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/vuetify": "^1.12.3"
+  }
+}
