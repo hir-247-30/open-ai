@@ -20,7 +20,7 @@ async function execOpenAiRequest(sentence: string | undefined): Promise<string |
   });
   const completion: OpenAI.Chat.Completions.ChatCompletion = await openai.chat.completions.create({
     messages: [
-      { role: 'system', content: 'あなたはあなたは何でも知っている先生です' },
+      { role: 'system', content: 'あなたは何でも知っている先生です' },
       { role: 'user', content: formattedPrompt }
     ],
     model: "gpt-3.5-turbo",
