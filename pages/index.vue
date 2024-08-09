@@ -5,7 +5,7 @@
       color="cyan"
       label="質問をどうぞ"
       v-model="question"
-      :disable="questionDisable"
+      :disabled="questionDisabled"
     ></v-textarea>
     <v-col cols="auto">
       <v-btn density="default" @click="doRequest">送信</v-btn>
@@ -22,27 +22,29 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import { AxiosResponse } from "axios";
 type apiResponse = {
   result: string
 }
-export default {
+export default Vue.extend({
   data () {
     return {
       question: '',
       response: '',
-      questionDisable: false
+      questionDisabled: false
     }
   },
   methods: {
     doRequest () {
       if(this.question === '') return;
 
-      this.questionDisable = true;
+      this.questionDisabled = true;
       this.response = 'リクエスト中・・・';
 
       this.$axios.post('/api/question', {
           sentence: this.question,
+          timeout: 20000,
         })
         .then((res: AxiosResponse<apiResponse>) => {
           this.response = res.data.result;
@@ -52,9 +54,9 @@ export default {
           console.log(error);
         })
         .finally(() => {
-          this.questionDisable = false;
+          this.questionDisabled = false;
         });
     }
   }
-}
+})
 </script>

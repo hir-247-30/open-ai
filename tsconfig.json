@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -20,26 +19,14 @@
     "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
-    },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@nuxtjs/axios"
     ]
   },
   "include": [
-    "./server/**/*.ts",
-    "./pages/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
+    "server/**/*.ts",
+    "pages/**/*.vue",
   ]
 }
